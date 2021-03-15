@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="static/img/icon.png">
+  <title> Colors </title>
+  <style>
+    body{
+      margin: 0px;
+      padding: 0px;
+      overflow: hidden;
+    }
+    div{
+      width: 20vw;
+      height: 25vh;
+    }
+    input{
+      position: absolute;
+      top: 1000%;
+    }
+  </style>
+</head>
+
+<body>
+  <input type=text id=0>
+  <div style="margin-left:0vw;  margin-top:0vh"   onClick=copy(1)  id=1> </div>
+  <div style="margin-left:20vw; margin-top:-25vh" onClick=copy(2)  id=2> </div>
+  <div style="margin-left:40vw; margin-top:-25vh" onClick=copy(3)  id=3> </div>
+  <div style="margin-left:60vw; margin-top:-25vh" onClick=copy(4)  id=4> </div>
+  <div style="margin-left:80vw; margin-top:-25vh" onClick=copy(5)  id=5> </div>
+  <div style="margin-left:0vw;  margin-top:0vh"   onClick=copy(6)  id=6> </div>
+  <div style="margin-left:20vw; margin-top:-25vh" onClick=copy(7)  id=7> </div>
+  <div style="margin-left:40vw; margin-top:-25vh" onClick=copy(8)  id=8> </div>
+  <div style="margin-left:60vw; margin-top:-25vh" onClick=copy(9)  id=9> </div>
+  <div style="margin-left:80vw; margin-top:-25vh" onClick=copy(10) id=10></div>
+  <div style="margin-left:0vw;  margin-top:0vh"   onClick=copy(11) id=11></div>
+  <div style="margin-left:20vw; margin-top:-25vh" onClick=copy(12) id=12></div>
+  <div style="margin-left:40vw; margin-top:-25vh" onClick=copy(13) id=13></div>
+  <div style="margin-left:60vw; margin-top:-25vh" onClick=copy(14) id=14></div>
+  <div style="margin-left:80vw; margin-top:-25vh" onClick=copy(15) id=15></div>
+  <div style="margin-left:0vw;  margin-top:0vh"   onClick=copy(16) id=16></div>
+  <div style="margin-left:20vw; margin-top:-25vh" onClick=copy(17) id=17></div>
+  <div style="margin-left:40vw; margin-top:-25vh" onClick=copy(18) id=18></div>
+  <div style="margin-left:60vw; margin-top:-25vh" onClick=copy(19) id=19></div>
+  <div style="margin-left:80vw; margin-top:-25vh" onClick=copy(20) id=20></div>
+
+
+<script>
+  var letters = '0123456789ABCDEF';
+  var array=[];
+
+  for(var i=1; i<21; i++){
+    var color = '#';
+    for (var ii = 0; ii < 6; ii++) {
+      color += letters[Math.floor(Math.random()*16)];
+    }
+    document.getElementById(i).style.backgroundColor=color;
+    array.push(color);
+  }
+
+  function copy(num){
+    document.getElementById("0").value=array[num-1];
+    document.getElementById("0").select();
+    document.execCommand("copy");
+  }
+</script>
+</body>
+</html>
